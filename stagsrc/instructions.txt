@@ -1,0 +1,47 @@
+General idea:
+get and build OpenCV (builds dynamic library objects), get python and scons, build stag. I got this working on a Linux VM, but it may be possible under cygwin.
+
+Future improvements
+Currently, these instructions build OpenCV dynamically (as .so files, same thing as windows .dll files). One can try doing "cmake -D BUILD_SHARED_LIBS=0" to try and build OpenCV as static library ( as .a files ) so that opencv is baked into the stag executable and doesn't need to be installed on the target machine.
+Note: static libraries need to be included differently, see http://opencv-users.1802565.n2.nabble.com/Static-libraries-dependencies-td6275997.html and http://stackoverflow.com/questions/2734719/howto-compile-a-static-library-in-linux and http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html
+
+IF IN CYGWIN.
+step 0. get cygwin with built-in python
+step 0.5. check that you got the right python with "which python" (should be "/usr/bin/python").
+step 0.6: do "python --version", that should give back "Python 2.7.3"
+step 1. dl scons tar.gz
+step 2. execute "python ./setup.py install"
+step 3. Have fun with trying to compile opencv under cygwin or minGW (I don't envy you). Visual Studio won't work because you'll need to link to the libraries from cygwin later.
+step 4. set up include and library paths in cygwin so that scons sees opencv. Modifying "env.ParseConfig('pkg-config --cflags --libs opencv')" may be necessary.
+
+IF IN LINUX
+step 0. Get linux (either a VM or an actual install). I recommend Ubuntu or Elementary OS distros. Ask Larry for a working Elementary OS .VDI VM image (5GB) to skip steps 1 through 11. Actual install: put the .iso on a USB stick through a live-usb maker, or just burn the iso onto a CD. VM: install virtualbox, make a new VM. Pro tip for making a VM: allocate more than 1 core in settings.
+step 1. Get build-essential (sudo apt-get install build-essential in terminal)
+step 2. Get python and scons (through apt-get)
+step 3. download libs needed for building opencv through apt-get ( "sudo apt-get install build-essential scons libbluetooth-dev libopencv-dev libcv2.3 libcvaux2.3 libhighgui2.3 python-opencv opencv-doc libcv-dev libcvaux-dev libhighgui-dev" and some other ones as well)
+step 4. download opencv .tar.gz
+step 4.1. Extract the .tar.gz somewhere
+step 4.2. Open terminal, cd into the new extracted opencv folder.
+step 5. either a) run "cmake" or b) run "cmake-gui" and click "configure" then "generate" 
+step 5.1, OPTIONAL. set the bin directory or add parallel extensions or w/e
+step 6. "make" in opencv directory. If you don't mind making your VM unusably slow but want to make this faster, do "make -j NUMBER_OF_CORES_IN_YOUR_COMPUTER" to speed this up. Go grab a sandwich / coffee, this is going to take ~20min.
+step 7. "sudo make install" in opencv directory
+step 8. Now we're going to be building the stag source code. Obtain the stag source code.
+step 8.1 open a shell with the stag source code (the directory with an SConstruct file).
+BUILD: step 9. run "scons". This tries to build the executable.
+step 10. The executable should be ./bin/stag_bin
+step 11. We can't run it yet because the system isn't set up to dynamically load opencv libs we just built. do "export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib" (assuming that LD_LIBRARY_PATH is blank, otherwise append ":$LD_LIBRARY_PATH" at the end) (for reference: fixes this error: ./bin/stag_bin: error while loading shared libraries: libopencv_core.so.2.4: cannot open shared object file: No such file or directory)
+RUN: step 12. "cd ./bin", "./stag_bin". Enjoy the errors because you don't have a bluetooth wiimote. "sudo ./stag_bin" doesn't honor my $LD_LIBRARY_PATH for some reason
+
+CLEANING: Do "scons -clean" in your stag source code directory (the one with SConstruct) to remove all build files for stag
+CLEANING OPENCV
+do "make clean" in the opencv directory
+
+Building pretty diagrams
+step 0. get the source code and optionally opencv source code
+step 1. get doxygen, doxygen-gui and graphviz (for dot) through apt-get on linux and just downloading on windows. Somehow, Doxygen takes up 0.5GB on linux and 14MB on windows.
+step 1.1 If on windows, add dot to your path. Check your path with "win+r, cmd.exe, 'echo $PATH'".
+step 2. open the included Doxyfile file with doxywizard. 
+step 3. run doxygen (button called "run doxygen" under "run"). It will huff and puff for a while.
+step 4. open up index.html in your ./doc/html directory.
+

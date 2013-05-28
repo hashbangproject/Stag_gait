@@ -1,0 +1,5 @@
+env = Environment(CC = 'g++',
+                      CCFLAGS = '-O2', LIBS=['opencv_core','opencv_contrib','opencv_features2d','opencv_highgui',
+'opencv_imgproc','opencv_legacy','opencv_ml','opencv_objdetect','opencv_video'],
+LIBPATH=['/usr/local/lib'] )
+Program('src/Stag.cpp')

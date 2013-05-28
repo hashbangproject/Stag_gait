@@ -1,0 +1,3 @@
+env = Environment(CC = 'g++',
+                      CCFLAGS = '-O2')
+Program( 'executa'src/Stag.cpp')

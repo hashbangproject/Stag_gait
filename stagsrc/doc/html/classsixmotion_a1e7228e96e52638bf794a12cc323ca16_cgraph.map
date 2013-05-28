@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$sixmotion_8cpp.html#a2e8b2ef23f6f19bdcbc99292811bce86" title="accept_device" alt="" coords="328,5,435,35"/>
+<area shape="rect" id="node5" href="$sixmotion_8cpp.html#a51246b75ffb66b5c4754e519c2d5b017" title="fatal" alt="" coords="484,57,529,87"/>
+<area shape="rect" id="node8" href="$sixmotion_8cpp.html#a2ad176b48e77001d4400a403baf9035d" title="parse_raw" alt="" coords="189,109,272,139"/>
+<area shape="rect" id="node12" href="$sixmotion_8cpp.html#a97e99c754a15c170af9554c0022860a3" title="setup_device" alt="" coords="181,163,280,192"/>
+<area shape="rect" id="node10" href="$sixmotion_8cpp.html#a6da3937db21f72a0fa8f99e986ada1ab" title="be_memcpy" alt="" coords="335,109,428,139"/>
+<area shape="rect" id="node14" href="$sixmotion_8cpp.html#a2c84a0aa7176a9dba9a18091317d95fb" title="hidp_trans" alt="" coords="340,163,423,192"/>
+</map>

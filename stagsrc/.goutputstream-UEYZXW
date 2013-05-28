@@ -1,0 +1,3 @@
+env = Environment(CC = 'g++',
+                      CCFLAGS = '-O2')
+Program( target = 'stag_bin', [  Glob('*.c'), Glob('*.cpp') ] )

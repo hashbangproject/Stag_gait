@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_h_k_l_x_8cpp.html#ab651bb0559faeefffa1ce7b11176dbe5" title="hklx_packet_decode" alt="" coords="155,32,296,61"/>
+<area shape="rect" id="node9" href="$_h_k_l_x_8cpp.html#ab2c5c6eefb8a8d82d388456e0514fd7d" title="hklx_packet_free" alt="" coords="165,85,285,115"/>
+<area shape="rect" id="node11" href="$rs232_8c.html#ad2ab07792b6f73449d98cc5f906fd0a8" title="PollComport" alt="" coords="179,139,272,168"/>
+<area shape="rect" id="node5" href="$_h_k_l_x_8cpp.html#ad8892eedbe6f1c4673af8a363c4a0ce3" title="calculate_crc" alt="" coords="367,5,465,35"/>
+<area shape="rect" id="node7" href="$_h_k_l_x_8cpp.html#a9da94aab820ef29dc03f5282d8113ed5" title="hklx_packet_allocate" alt="" coords="344,59,488,88"/>
+</map>

@@ -1,0 +1,4 @@
+env = Environment(CC = 'g++',
+                      CCFLAGS = '-O2')
+Program( 'stag_bin', ['src/Stag.cpp', 
+						'src/HKLX.cpp', 'src/init_Stag.cpp', 'src/phase_gait.cpp', 'src/rs232.c', 'src/sixmotion.cpp',  )

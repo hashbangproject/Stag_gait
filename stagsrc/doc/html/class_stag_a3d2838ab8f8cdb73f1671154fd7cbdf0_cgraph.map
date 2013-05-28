@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_h_k_l_x_8cpp.html#a9da94aab820ef29dc03f5282d8113ed5" title="hklx_packet_allocate" alt="" coords="128,5,272,35"/>
+<area shape="rect" id="node5" href="$_h_k_l_x_8cpp.html#ab2c5c6eefb8a8d82d388456e0514fd7d" title="hklx_packet_free" alt="" coords="140,59,260,88"/>
+<area shape="rect" id="node7" href="$class_h_k_l_x.html#a0759588f318d31306a3eb4878b20a2fd" title="HKLX::send" alt="" coords="153,112,247,141"/>
+<area shape="rect" id="node9" href="$_h_k_l_x_8cpp.html#ad8892eedbe6f1c4673af8a363c4a0ce3" title="calculate_crc" alt="" coords="320,85,419,115"/>
+<area shape="rect" id="node11" href="$rs232_8c.html#af2a032058a335a76ef91d025ac63942b" title="SendBuf" alt="" coords="333,139,405,168"/>
+</map>

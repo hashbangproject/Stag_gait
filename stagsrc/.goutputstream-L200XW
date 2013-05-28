@@ -1,0 +1,3 @@
+env = Environment(CC = 'g++',
+                      CCFLAGS = '-O2 -I/usr/include/opencv -lcv')
+Program('src/Stag.cpp')

@@ -1,0 +1,6 @@
+env = Environment(CC = 'g++',
+                      CCFLAGS = '-O2')
+Program( target = 'stag_bin', source = [  Glob('*.c'), Glob('*.cpp') ] )
+
+
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_PYTHON_SUPPORT=ON 

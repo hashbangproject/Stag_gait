@@ -1,0 +1,5 @@
+env = Environment(CC = 'g++',
+                      CCFLAGS = '-O2')
+env.ParseConfig('pkg-config --cflags --libs opencv');
+
+env.Program( target = 'stag_bin', source = 'src/Stag.cpp')
